@@ -14,8 +14,11 @@
   
       <label for="psw"><b>Password</b></label>
       <input id="pswLogin" type="password" placeholder="Enter Password" name="psw" required>
+      <!-- so wont reload every time I press -->
   <input type="button" onclick="callCheckUser()" value="enter">
     <p id="demo"></p>
+    <p>Are you a new user?</p>
+   <a onclick="location.href='/createUser.html'"><input type="button" value="create new user"></a> 
   </form>
   <script src="/loginPage.js"></script>
 </body>
