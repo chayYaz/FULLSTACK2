@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h5>Create user</h5>
+  <input type="button"  onclick="location.href='/loginPage.html'" value='I already exist'>
+ 
+  <form  method="get">
+  
+    <div >
+      <label for="uname" ><b>Username</b></label>
+      <input id="uname" type="text" placeholder="Enter Username" name="uname" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input id="psw" type="password" minlength="8" maxlength="15" placeholder="Enter Password" name="psw" required>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      <button onclick="createUser()">create user</button>
+    </div>
+  </form>
+  <script src="createUser.js"></script>
+</body>
+</html>
