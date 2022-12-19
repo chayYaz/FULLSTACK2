@@ -1,21 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="cupGame.css">
-	<title>Document</title>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<link href="./cupGame.css" rel="stylesheet">
 </head>
 <body>
-	<div id="game">
-		<div class="cup" ></div>
-		<div class="cup chosen" ><div class="ball"></div></div>
-    <div class="cup" ></div>
-		<div id="game-result"></div>
-	</div>
-	
-	<button id="btn-play" onclick="mixThem()">Play</button>
-  <script src="/cupGame.js"></script>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="balls">
+<div class="ball" id="drag1" draggable="true" ondragstart="drag(event)"></div>
+<div class="ball" id="drag2" draggable="true" ondragstart="drag(event)"></div>
+<div class="ball" id="drag3" draggable="true" ondragstart="drag(event)"></div>
+</div>
+<script src="./cupGame.js"></script>
 </body>
 </html>
