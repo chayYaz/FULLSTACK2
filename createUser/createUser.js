@@ -1,7 +1,6 @@
 function createUser(){
 
 var userName=document.getElementById("uname").value;
-//!!!!!!!make here changes to check length is ok
 var psw=document.getElementById("psw").value;
 const person = {
   score:0,

@@ -11,7 +11,8 @@ function checkUserExists(){
   if(obj && psw==obj["password"])
   {
     console.log("yes");
-    localStorage.setItem(JSON.stringify("currentUser"),JSON.stringify(withSameName));
+    var currentUser=JSON.parse(withSameName);
+    localStorage.setItem(JSON.stringify("currentUser"),JSON.stringify(currentUser));
     location.replace("../games.html");
   }
   else{
