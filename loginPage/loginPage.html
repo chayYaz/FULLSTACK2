@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login page</title>
+  <link href="./loginPage.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Login</h1>
+  <form class="centralize flexColumn width60">
+    <label for="uname"><b>Username</b></label>
+      <input id="idLogin" type="text" placeholder="Enter Username" name="uname" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input id="pswLogin" type="password" placeholder="Enter Password" name="psw" required>
+      <!-- so wont reload every time I press -->
+  <input class="button" type="button" onclick="callCheckUser()" value="Enter">
+    <p id="demo"></p>
+    <p>Are you a new user?</p>
+   <a href='../createUser/createUser.html'><input type="button" value="Create new user" class="button"></a> 
+  </form>
+  <script src="./loginPage.js"></script>
+</body>
+</html>

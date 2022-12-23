@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>create new user</title>
+  <link href="./createUser.css" rel="stylesheet">
+</head>
+<body class="centralize">
+  <a href='../loginPage/loginPage.html' class="button floatStart">I already exist</a>
+  <h1>Create user</h1>
+  
+ 
+  <form  method="get" >
+  
+    <div class="flexColumn width60">
+      <label for="uname" ><b>Username</b></label>
+      <input id="uname" type="text" placeholder="Enter Username" name="uname" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input id="psw" type="password" minlength="8" maxlength="15" placeholder="Enter Password" name="psw" required>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      <button onclick="createUser()" class="button">create user</button>
+    </div>
+  </form>
+  <script src="createUser.js"></script>
+</body>
+</html>

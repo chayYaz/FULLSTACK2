@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+  padding:10px;
+  text-align: center;
+}
+.centralize{
+  text-align: center;
+  margin:auto;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.button{
+  width:200px;
+  border: 0ch;
+  margin: 15px;
+  text-align: center;
+  background-color:#04AA6D;
+  color:aliceblue;
+  font-size: large;
+  border-radius: 5%;
+}
+.flexColumn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+}
+.width60{
+  width:60%;
+}
+input, label{
+  width:400px;
+}
+
