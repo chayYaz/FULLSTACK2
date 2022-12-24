@@ -2,6 +2,7 @@
 <html>
 <head>
 <script>
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -14,6 +15,8 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
+  upScore();
+
 }
 </script>
 <link href="./cupGame.css" rel="stylesheet">
@@ -27,6 +30,7 @@ function drop(ev) {
 <div class="ball" id="drag3" draggable="true" ondragstart="drag(event)"></div>
 </div>
 <input type="button" value="choose level" onclick="callChooseLevel()">
+<p id="putScore">hi</p>
 <script src="./cupGame.js"></script>
 </body>
 </html>

@@ -3,7 +3,6 @@ function checkUserExists(){
  
   var userName=document.getElementById("idLogin").value;
   var psw=document.getElementById("pswLogin").value;
- 
   var withSameName=window.localStorage.getItem(JSON.stringify(userName));
 
   let obj = JSON.parse(withSameName);
