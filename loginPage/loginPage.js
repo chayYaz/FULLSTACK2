@@ -6,7 +6,6 @@ function checkUserExists(){
   var withSameName=window.localStorage.getItem(JSON.stringify(userName));
 
   let obj = JSON.parse(withSameName);
-  console.log("a");
   if(obj && psw==obj["password"])
   {
     console.log("yes");
@@ -30,7 +29,6 @@ function checkUserExists(){
 }
 function callCheckUser(){
   if(canTry!==0){
-    
     checkUserExists();
   }
   else{
