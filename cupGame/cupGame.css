@@ -5,6 +5,7 @@
   border: 1px solid #aaaaaa;
 }
 .ball{
+  display: inline-block;
 	width:100px;
 	height:100px;
 	background-color:blue;

@@ -56,13 +56,13 @@ function addAnimation(){
 var items = document.getElementsByClassName("ball");
 for(var i=0;i<items.length;i++){
 items[i].animate([
-    { transform: 'scale(1)', background: 'red', opacity: 1, offset: 0 },
-    { transform: 'scale(.5) rotate(270deg)', background: 'blue', opacity: .5, offset: .2 },
-    { transform: 'scale(1) rotate(0deg)', background: 'red', opacity: 1, offset: 1 },
+    { transform: 'scale(1)', opacity: 1 },
+    { transform: 'scale(.5) ', opacity: .7},
+    { transform: 'scale(1)', opacity: 1 },
   ], {
     duration: 2000, //milliseconds
-    easing: 'ease-in-out', //'linear', a bezier curve, etc.
-    delay: 10, //milliseconds
+    easing: 'linear', //'linear', a bezier curve, etc.
+    delay: 5, //milliseconds
     iterations: Infinity, //or a number
     direction: 'alternate', //'normal', 'reverse', etc.
     fill: 'forwards' //'backwards', 'both', 'none', 'auto'

@@ -34,3 +34,6 @@ input, label{
   font-size: large;
   border-radius: 5%;
 }
+.button:hover{
+  background-color:#185e44;
+}
