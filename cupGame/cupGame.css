@@ -10,3 +10,11 @@
 	background-color:blue;
 	border-radius: 100%;
 }
+
+.item {
+  background: blue;
+  position: absolute;
+  height: 75px;
+  width: 200px;
+  margin: 100px;
+}
