@@ -1,6 +1,6 @@
 var canTry=3;
 function checkUserExists(){
- 
+  
   var userName=document.getElementById("idLogin").value;
   var psw=document.getElementById("pswLogin").value;
   var withSameName=window.localStorage.getItem(JSON.stringify(userName));
@@ -9,8 +9,9 @@ function checkUserExists(){
   if(obj && psw==obj["password"])
   {
     console.log("yes");
-    var currentUser=JSON.parse(withSameName);
-    localStorage.setItem(JSON.stringify("currentUser"),JSON.stringify(currentUser));
+    document.cookie = "username="+userName+"; expires=Tue, 3 Jan 2023 12:00:00 UTC; path=/";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  alert(decodedCookie);
     location.replace("../games.html");
   }
   else{

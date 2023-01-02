@@ -1,8 +1,14 @@
 var putScore=document.getElementById("putScore");
 var basicBalls=document.getElementById("balls");
-"currentUser"
-var withSameName=JSON.parse(window.localStorage.getItem(JSON.stringify("currentUser")));
-var score=withSameName.score;
+let x = document.cookie;
+console.log(x);
+userName = /=(.+)/.exec(x)[1];
+console.log(userName);
+var withSameName=window.localStorage.getItem(JSON.stringify(userName));
+console.log(withSameName);
+let obj = JSON.parse(withSameName);
+console.log(obj);
+var score=obj.score;
 console.log(score);
 function chooseLevel(level){
   for(var i=1;i<=level;i++){
@@ -22,17 +28,15 @@ function callChooseLevel(){
 chooseLevel(level);}
 function upScore(){
   score++;
+  console.log(score);
   putScore.innerText=score;
-  withSameName.score=score;
-  localStorage.setItem(JSON.stringify("currentUser"),JSON.stringify(withSameName));
-  let x = document.cookie;
-  //let userName = decodeURIComponent(document.cookie);
-  console.log("user name");
-  console.log(x);
-  let userData=withSameName.person;//JSON.parse(withSameName.person);
-  userData.score=score;
-  console.log(userData);
-  localStorage.setItem(JSON.stringify(userName),JSON.stringify(userData));
+  var withSameName2=window.localStorage.getItem(JSON.stringify(userName));//stringify changed the object...
+  let obj2 = JSON.parse(withSameName2);
+  console.log("obj2");
+  console.log(obj2)
+  obj2.score=score;
+  console.log(score);
+  localStorage.setItem(JSON.stringify(userName),JSON.stringify(obj2));
 
 }
 /* Animation */
