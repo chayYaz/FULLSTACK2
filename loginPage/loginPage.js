@@ -9,7 +9,7 @@ function checkUserExists(){
   if(obj && psw==obj["password"])
   {
     console.log("yes");
-    document.cookie = "username="+userName+"; expires=Tue, 3 Jan 2023 12:00:00 UTC; path=/";
+    document.cookie = "username="+userName+"; expires=Tue, 3 Jan 2023 16:00:00 UTC; path=/";
   let decodedCookie = decodeURIComponent(document.cookie);
   alert(decodedCookie);
     location.replace("../games.html");

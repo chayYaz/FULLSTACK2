@@ -130,8 +130,8 @@ const flipCard = card => {
                     under <span class="highlight">${state.totalTime}</span> seconds
                 </span>
             `
-            selectors.start.classList.remove('disabled')
-            state.gameStarted = false
+            // selectors.start.classList.remove('disabled')
+            // state.gameStarted = false
             clearInterval(state.loop)
         }, 1000)
     }

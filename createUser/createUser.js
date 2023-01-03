@@ -16,7 +16,6 @@ if ( localStorage.getItem(JSON.stringify(userName)) !== null) {
   alert("this user name already exists. if it is you please try logging in from login page. if you want to change your passwor, you will have to log in first")
 }
 else{
-//   document.cookie = "username="+userName+"; expires=Thu, 18 Dec 2025 12:00:00 UTC";
-// localStorage.setItem(JSON.stringify(userName),JSON.stringify(person));
+localStorage.setItem(JSON.stringify(userName),JSON.stringify(person));
 }
-;}//
+;}

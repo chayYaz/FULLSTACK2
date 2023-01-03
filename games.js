@@ -1,6 +1,6 @@
 const games=document.getElementsByClassName("stillCreating");
 
-var currentUser=JSON.parse(localStorage.getItem(JSON.stringify("currentUser")));
+// var currentUser=JSON.parse(localStorage.getItem(JSON.stringify("currentUser")));
 
 //document.getElementById("enterScore").innerText=currentUser.score;
 for(var i=0;i<games.length ;i++){

@@ -1,7 +1,7 @@
 var putScore=document.getElementById("putScore");
 var basicBalls=document.getElementById("balls");
 let x = document.cookie;
-userName = /=(.+)/.exec(x)[1];
+userName = /=(.+)/.exec(x)[1]; 
 var withSameName=window.localStorage.getItem(JSON.stringify(userName));
 
 let obj = JSON.parse(withSameName);
@@ -30,8 +30,6 @@ function upScore(){
   putScore.innerText=score;
   var withSameName2=window.localStorage.getItem(JSON.stringify(userName));//stringify changed the object...
   let obj2 = JSON.parse(withSameName2);
-
-
   obj2.score=score;
 
   localStorage.setItem(JSON.stringify(userName),JSON.stringify(obj2));
