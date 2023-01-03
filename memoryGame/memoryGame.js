@@ -17,46 +17,46 @@ const state = {
 }
 
 const shuffle = array => {
-    const clonedArray = [...array]
+    const clonedArray = [...array];
 
     for (let index = clonedArray.length - 1; index > 0; index--) {
-        const randomIndex = Math.floor(Math.random() * (index + 1))
-        const original = clonedArray[index]
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        const original = clonedArray[index];
 
-        clonedArray[index] = clonedArray[randomIndex]
-        clonedArray[randomIndex] = original
+        clonedArray[index] = clonedArray[randomIndex];
+        clonedArray[randomIndex] = original;
     }
 
-    return clonedArray
+    return clonedArray;
 }
 
 const pickRandom = (array, items) => {
-    const clonedArray = [...array]
-    const randomPicks = []
+    const clonedArray = [...array];
+    const randomPicks = [];
 
     for (let index = 0; index < items; index++) {
-        const randomIndex = Math.floor(Math.random() * clonedArray.length)
+        const randomIndex = Math.floor(Math.random() * clonedArray.length);
         
-        randomPicks.push(clonedArray[randomIndex])
-        clonedArray.splice(randomIndex, 1)
+        randomPicks.push(clonedArray[randomIndex]);
+        clonedArray.splice(randomIndex, 1);
     }
 
-    return randomPicks
+    return randomPicks;
 }
 
 const generateGame = () => {
-    const dimensions = selectors.board.getAttribute('data-dimension')
+    const dimensions = selectors.board.getAttribute('data-dimension');
     
 
     //the dimensions must be evan so that each card has a pair
     if (dimensions % 2 !== 0) {
-        throw new Error("The dimension of the board must be an even number.")
+        throw new Error("The dimension of the board must be an even number.");
     }
 
-    const emojis = ['&#128512', '&#128514', '&#128517', '&#128518', '&#128519', '&#128520', '&#128521', '&#128525', '&#128526', '&#128548','&#128564' ]
+    const emojis = ['&#128512', '&#128514', '&#128517', '&#128518', '&#128519', '&#128520', '&#128521', '&#128525', '&#128526', '&#128548','&#128564' ];
     //same as 😀, 😂, 😅,😆, 😇	, 😈, 😉, 😍, 😎, 😤, 😴		
-    const picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
-    const items = shuffle(picks.concat(picks))
+    const picks = pickRandom(emojis, (dimensions * dimensions) / 2); 
+    const items = shuffle(picks.concat(picks));
     const cards = `
         <div class="board" style="grid-template-columns: repeat(${dimensions}, auto)">
             ${items.map(item => `
@@ -67,18 +67,19 @@ const generateGame = () => {
             `).join('')}
        </div>
     `
-    
-    const parser = new DOMParser().parseFromString(cards, 'text/html')
+    //
+    const parser = new DOMParser().parseFromString(cards, 'text/html');
+    //const p= JSON.parse(cards);
 
-    selectors.board.replaceWith(parser.querySelector('.board'))
+    selectors.board.replaceWith(parser.querySelector('.board'));
 }
 
 const startGame = () => {
-    state.gameStarted = true
-    selectors.start.classList.add('disabled')
+    state.gameStarted = true;
+    selectors.start.classList.add('disabled');
 
     state.loop = setInterval(() => {
-        state.totalTime++
+        state.totalTime++;
 
         selectors.moves.innerText = `${state.totalFlips} moves`
         selectors.timer.innerText = `time: ${state.totalTime} sec`
@@ -129,7 +130,8 @@ const flipCard = card => {
                     under <span class="highlight">${state.totalTime}</span> seconds
                 </span>
             `
-
+            selectors.start.classList.remove('disabled')
+            state.gameStarted = false
             clearInterval(state.loop)
         }, 1000)
     }
