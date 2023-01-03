@@ -4,8 +4,7 @@
 <script>
 
 function allowDrop(ev) {
-  ev.preventDefault();
-}
+  ev.preventDefault();//else it returns to previous place
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
@@ -30,12 +29,6 @@ function drop(ev) {
 <p id="putScore">hi</p>
 
 
-
-
-
-<div id ="myContainer">
-  <div class="item"></div>
-</div>
 <script src="./cupGame.js"></script>
 </body>
 </html>

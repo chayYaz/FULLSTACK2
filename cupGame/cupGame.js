@@ -1,15 +1,13 @@
 var putScore=document.getElementById("putScore");
 var basicBalls=document.getElementById("balls");
 let x = document.cookie;
-console.log(x);
 userName = /=(.+)/.exec(x)[1];
-console.log(userName);
 var withSameName=window.localStorage.getItem(JSON.stringify(userName));
-console.log(withSameName);
+
 let obj = JSON.parse(withSameName);
-console.log(obj);
+
 var score=obj.score;
-console.log(score);
+
 function chooseLevel(level){
   for(var i=1;i<=level;i++){
     basicBalls.insertAdjacentHTML("afterend",'<div class="ball" id="'+i+ '" draggable="true" ondragstart="drag(event)"/>');
@@ -28,14 +26,14 @@ function callChooseLevel(){
 chooseLevel(level);}
 function upScore(){
   score++;
-  console.log(score);
+
   putScore.innerText=score;
   var withSameName2=window.localStorage.getItem(JSON.stringify(userName));//stringify changed the object...
   let obj2 = JSON.parse(withSameName2);
-  console.log("obj2");
-  console.log(obj2)
+
+
   obj2.score=score;
-  console.log(score);
+
   localStorage.setItem(JSON.stringify(userName),JSON.stringify(obj2));
 
 }
